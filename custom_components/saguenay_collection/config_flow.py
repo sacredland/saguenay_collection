@@ -98,7 +98,7 @@ class SaguenayCollectionConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
         return vol.Schema(
             {
                 vol.Required("street"): vol.In(
-                    {street["id"]: street["toponymie"]["rue_complete_min"] for street in self.streets}
+                    {street["cle"]: street["toponymie"]["rue_complete_min"] for street in self.streets}
                 )
             }
         )
